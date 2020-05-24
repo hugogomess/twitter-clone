@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/hugogomess/twitter-clone",
   "author": "hugogomess <hugogomes02@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
