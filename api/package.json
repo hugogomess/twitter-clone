@@ -6,7 +6,8 @@
   "author": "hugogomess <hugogomes02@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
