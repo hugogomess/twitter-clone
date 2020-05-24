@@ -6,7 +6,10 @@ const port = process.env.PORT || 3333;
 const mongoUrl = process.env.MONGO_URL;
 const app = express();
 
-mongoose.connect(mongoUrl, { useNewUrlParser: true });
+mongoose.connect(mongoUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.get('/', (req, res) => {
   return res.send('Hello World');
