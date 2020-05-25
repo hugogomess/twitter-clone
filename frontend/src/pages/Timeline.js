@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 
 import api from '../services/api';
+import Tweet from '../components/Tweet';
 import twitterLogo from '../twitter.svg';
 import './Timeline.css';
 
 export default class Timeline extends Component {
   state = {
+    tweets: [],
     newTweet: '',
   };
+
+  async componentDidMount() {
+    const res = await api.get('/tweets');
+
+    this.setState({ tweets: res.data });
+  }
 
   handleInputChange = event => {
     this.setState({ newTweet: event.target.value });
@@ -37,6 +45,13 @@ export default class Timeline extends Component {
           />
           <button type="submit">Tweet</button>
         </form>
+
+        <ul className="tweet-list">
+          { this.state.tweets.map(tweet => (
+              <Tweet key={tweet._id} tweet={tweet}/>
+            ))
+          }
+        </ul>
       </div>
     )
   }
