@@ -21,6 +21,8 @@ class TweetController {
 
     tweet.likes = tweet.likes + 1;
     await tweet.save();
+
+    req.io.emit('like', tweet);
     
     return res.json(tweet);
   }
