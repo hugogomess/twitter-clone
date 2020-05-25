@@ -1,6 +1,7 @@
 require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes');
 
 const port = process.env.PORT || 3333;
 const mongoUrl = process.env.MONGO_URL;
@@ -11,9 +12,7 @@ mongoose.connect(mongoUrl, {
   useUnifiedTopology: true
 });
 
-app.get('/', (req, res) => {
-  return res.send('Hello World');
-});
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}...`);
