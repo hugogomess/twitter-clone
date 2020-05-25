@@ -1,6 +1,6 @@
 # Twitter Clone API
 
-Twitter clone  api.
+Twitter clone api.
 
 ## Installation
 
