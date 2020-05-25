@@ -20,6 +20,8 @@ export default class Timeline extends Component {
     const author = localStorage.getItem('@twitter-clone:username');
 
     await api.post('/tweets', { content, author });
+
+    this.setState({ newTweet: '' });
   }
   
   render() {
