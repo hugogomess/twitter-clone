@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import socket from 'socket.io-client';
 
 import api from '../services/api';
 import Tweet from '../components/Tweet';
@@ -12,9 +13,24 @@ export default class Timeline extends Component {
   };
 
   async componentDidMount() {
+    this.subscribeToEvent();
     const res = await api.get('/tweets');
 
     this.setState({ tweets: res.data });
+  }
+
+  subscribeToEvent = () => {
+    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+    const io = socket(apiBaseUrl);
+
+    io.on('tweet', data => {
+      this.setState({ tweets: [data, ...this.state.tweets]})
+    });
+
+    io.on('like', data => {
+      console.log(data);
+    });
+
   }
 
   handleInputChange = event => {
