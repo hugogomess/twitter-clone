@@ -1,2 +1,7 @@
 # Twitter Clone
-Twitter timeline clone made with Nodejs, Reactjs and React Native
+Twitter real-time timeline clone made with Nodejs, React and React Native
+
+## Previews
+
+![Preview](./demos/web-preview-01.png)
+![Preview](./demos/web-preview-02.png)
