@@ -5,5 +5,6 @@ const routes = express.Router();
 
 routes.get('/tweets', TweetController.index);
 routes.post('/tweets', TweetController.store);
+routes.get('/tweets/like/:tweetId', TweetController.like);
 
 module.exports = routes;

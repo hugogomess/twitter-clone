@@ -12,6 +12,16 @@ class TweetController {
 
     return res.json(tweet);
   }
+
+  async like(req, res) {
+    const { tweetId } = req.params;
+    const tweet = await Tweet.findById(tweetId);
+
+    tweet.likes = tweet.likes + 1;
+    await tweet.save();
+    
+    return res.json(tweet);
+  }
 }
 
 module.exports = new TweetController();
