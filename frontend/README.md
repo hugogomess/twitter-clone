@@ -12,6 +12,8 @@ First of all you need to install NodeJS and Yarn
    $ yarn
    ```
 
+2. Create .env file in root directory, use .env.example file for env vars keys.
+
 ## Usage
 
 ```console
