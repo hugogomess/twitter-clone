@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
-import './Timeline.css';
+import api from '../services/api';
 import twitterLogo from '../twitter.svg';
+import './Timeline.css';
 
 export default class Timeline extends Component {
   state = {
@@ -12,13 +13,13 @@ export default class Timeline extends Component {
     this.setState({ newTweet: event.target.value });
   }
 
-  handleNewTweet = event => {
+  handleNewTweet = async event => {
     event.preventDefault();
 
     const content = this.state.newTweet;
     const author = localStorage.getItem('@twitter-clone:username');
 
-    console.log(content, author);
+    await api.post('/tweets', { content, author });
   }
   
   render() {
