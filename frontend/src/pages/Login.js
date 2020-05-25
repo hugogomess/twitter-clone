@@ -29,11 +29,13 @@ export default class Login extends Component {
     return (
       <div className="login-wrapper">
         <img src={twitterLogo} alt="twitter-logo"/>
+        
         <form onSubmit={this.handleSubmit}>
           <input
-          value={this.state.username}
-          type="text" placeholder="Username"
-          onChange={this.handleInputChange}/>
+            value={this.state.username}
+            type="text" placeholder="Username"
+            onChange={this.handleInputChange}
+          />
           <button type="submit">Login</button>
         </form>
       </div>

@@ -24,6 +24,23 @@
   resize: none;
 }
 
+.timeline-wrapper form button {
+  margin: 10px 0 0;
+  background: #4bb0ee;
+  border-radius: 5px;
+  height: 44px;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.timeline-wrapper form button:hover {
+  background: #42a1db;
+}
+
 .tweet-list {
   list-style: none;
   color: #1c2022;
